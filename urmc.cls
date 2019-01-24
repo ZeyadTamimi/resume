@@ -159,6 +159,8 @@
 \newcolumntype{C}{>{\raggedleft\arraybackslash}p{1.3cm}}
 
 \newcolumntype{E}{>{\raggedright\arraybackslash}p{\rightcolumnlength}}
+% Define a new column type for the education environment
+\newcolumntype{Y}{>{\raggedleft}p{\leftcolumn}}
 
 \newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
 
@@ -383,8 +385,8 @@
 \newcommand\project[5][]{
   \begin{minipage}[t]{\dimexpr(\linewidth) - 1.5em}
     \textbf{\textsc{#2}}  \
-    \ifthenelse{\equal{#1}{}}{\hfill}{\hfill \raisebox{-0.2cm}[0cm][0cm]{\includegraphics[height=0.7cm]{#1}}} \\
-    \textsc{#3} \ifthenelse{\equal{#4}{}}{}{ ~~ #4}
+    \ifthenelse{\equal{#1}{}}{\hfill \textbf{#3}}{\hfill \raisebox{-0.2cm}[0cm][0cm]{\includegraphics[height=0.7cm]{#1}}}
+    \ifthenelse{\equal{#4}{}}{}{\\ ~~~~~~~~~~~~ #4}
     #5\bigskip
   \end{minipage}
   \\*
@@ -417,25 +419,21 @@
 
 
 
-
-
-
-% Define a new column type for the education environment
-\newcolumntype{Y}{>{\raggedleft}p{\leftcolumn}}
-
+%-------------------------------------------------------------------------------
+% Education
+%-------------------------------------------------------------------------------
 % Define the education environment
-\newenvironment{education}{%
+\newenvironment{education}{
   \begin{tabular}{Y p{\rightcolumnlength}}
-}{%
+}{
   \end{tabular}
 }
-
 
 
 % Render a education in the education environment
 % Usage: \education{<date>}{<description>}
 \newcommand\educationentry[4]{
-  #1    &  #2 - #3 \newline GPA: #4 \\
+  \textbf{#1}    &  \textbf{#2 - #3} \newline GPA: #4 \\
 }
 
 

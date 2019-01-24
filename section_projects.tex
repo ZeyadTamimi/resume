@@ -1,47 +1,45 @@
 \sectionTitle{Projects}{\faLaptop}
 
 \begin{projects}
-    \project[uas_logo]
+    \project
+    {Extended FreeRTOS Raspberry PI 2B Port}{SEP 2018 --- DEC 2018}{}{
+        \begin{itemize}
+        \item Implemented EDF scheduling in FreeRTOS kernel to allow for higher processor
+              utilization
+        \item Collaborated on the design and implementation of SRP and single stack sharing to
+              prevent priority inversion as well as reducing FreeRTOS memory footprint
+        \item Extended FreeRTOS to support Constant Bandwidth Servers allowing aperiodic tasks to
+              run with strict timing guarantees
+        \item Collaborated on extending FreeRTOS by utilizing SMT on the BCM2837B0 CPU allowing
+              users to run partitioned and global EDF increasing CPU utilization
+        \end{itemize}
+    }
+    \project
     {UBC Unmanned Aircraft Systems Team --- Team Captain}{JAN 2014 --- JUN 2018}
     {\website{https://www.ubcuas.com/}{Website}}{
         \begin{itemize}
             \item Led a team of 35 members from 2017-2018 Unmanned systems Canada competition that
-                  was recognized for outstanding communication, process,and consistently in the top
+                  was recognized for outstanding communication, process, and consistently in the top
                   5 each year
             \item Architected the next generation of UAS ground control station software in C++ that
                   parses a MAVLink stream sent via UDP/TCP, geotag images retrieved from the drone,
                   and autonomously operate an Arduino based antenna tracker
             \item Engineered a variable length message format in C++ to help send data between any
-                  UBC UAS micro-controllers (over TCP/IP or Serial) resulting in a unified 
+                  UBC UAS micro-controllers (over TCP/IP or Serial) leading to a unified
                   communication protocol and easier system development and maintenance
-            \item Designed an expandable and reliable software communications protocol utilizing 
-                  CRCs and COBS, resulting in reliable data transmission and a significant reduction
+            \item Designed an expandable and reliable software communication protocol utilizing
+                  CRCs and COBS, producing reliable data transmission and a significant reduction
                   in corrupted data processing
             \item Implemented a new documentation and issue tracking system using JIRA and
-                  Confluence resulting an increase in project efficiency and completion
+                  Confluence resulting in an increase of project efficiency and completion
         \end{itemize}
     }
-
-    \project
-    {Extended FreeRTOS Raspberry PI 2B Port}{SEP 2018 --- Present}{}{
-        \begin{itemize}
-        \item Implemented EDF scheduling in FreeRTOS kernel to allow for higher processor
-              utilization
-        \item Collaborated on the design and implementation of SRP and single stack sharing to
-              prevent priority inversion as well as reduce FreeRTOS memory footprint.
-        \item Extended FreeRTOS to support Constant Bandwidth Servers allowing users to handle
-              aperiodic tasks with strict timing guarantees
-        \item Collaborated on extending FreeRTOS by allowing users to utilize multi core partitioned
-              scheduling to achieve greater processor utilization
-        \end{itemize}
-    }
-
     \project
     {Designed and Implemented Extensions For OS161}{JAN 2018 --- MAY 2018}{}{
         \begin{itemize}
         \item Implemented locks, condition variables and semaphores at kernel level allowing user
               multithreaded applications to run
-        \item Designed and implemented file tables in the kernel allowing for file sharing between
+        \item Designed and implemented file tables in the kernel allowing file sharing between
               processes thus allowing user programs to share open file descriptors
         \item Architected a process id system that enabled kernel process management, and
               processes to fork and wait for each other
@@ -49,5 +47,21 @@
               address separation
         \end{itemize}
     }
-
+    \project
+    {Turreted Camera and Rubber Band Launcher with a touchscreen}{JAN 2017 --- MAY 2017}{}{
+        \begin{itemize}
+            \item Led a team of 4 to create a turreted camera and rubber band launcher using a
+                  DE1-SOC FPGA that can be controlled from a touchscreen or Bluetooth and achieved
+                  one of the top 3 teams in the class
+            \item Implemented a Motorola 6850 serial port using Verilog, enabling a soft-core
+                  processor to communicate with up to 4 peripherals at a time using the Altera
+                  Avalon Interface
+            \item Created generic C Serial Library that communicates with the memory mapped
+                  Motorola 6850 serial ports resulting in quicker application development times and
+                  reduced code duplication
+            \item Implemented image processing workflow by integrating a C JPEG decoder into a
+                  NIOS system which decodes images from the camera and send them to a Verilog GPU core
+                  to be displayed on a touch screen
+        \end{itemize}
+    }
 \end{projects}
